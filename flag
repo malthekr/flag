@@ -1,0 +1,31 @@
+from visual import *
+import math
+
+xakse=cylinder(pos=(0,0,0), axis = (50,0,0), color=color.red) #slet
+yakse=cylinder(pos=(0,0,0), axis = (0,50,0), color=color.green) #slet
+zakse=cylinder(pos=(0,0,0), axis = (0,0,50), color=color.blue) #slet
+
+flag = ( (0,1,0,1), 
+        (1,0,1,0),
+        (0,1,0,1),
+        (1,0,1,0) ) #farve sort/hvid
+tex = materials.texture(data = flag)
+
+goal = (cylinder(pos = (16,0,0), #position
+                axis = (0,7,0), #dens vinkel i forhold til dens position
+                radius = 0.2, #radius
+                color = color.red, #farve
+                length = 7 #laengde, herved hoejde
+                ),
+        cylinder(pos = (16,-2,0), #position
+                 axis = (0,1,0), #dens vinkel i forhold til dens position
+                 radius = 2, #radius
+                 color = color.green, #farve
+                 opacity = 0.5, #gemmensigtigheden
+                 length = 2 #laengde
+                 ),
+        box(pos = (17,5.5,0),
+            size = (0.2, 2, 2),
+            axis = (0,0,4),
+            color = color.white,
+            material = tex))
